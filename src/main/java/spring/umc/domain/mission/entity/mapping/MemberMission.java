@@ -2,7 +2,7 @@ package spring.umc.domain.mission.entity.mapping;
 
 import jakarta.persistence.*;
 import lombok.*;
-import spring.umc.domain.member.entity.User;
+import spring.umc.domain.member.entity.Member;
 import spring.umc.domain.mission.entity.Mission;
 import spring.umc.domain.mission.enums.Status;
 import spring.umc.global.entity.BaseEntity;
@@ -13,7 +13,7 @@ import spring.umc.global.entity.BaseEntity;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 @Table(name = "user_mission")
-public class UserMission extends BaseEntity {
+public class MemberMission extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userMissionId;
@@ -22,8 +22,8 @@ public class UserMission extends BaseEntity {
     private Status status;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @JoinColumn(name = "member_id", nullable = false)
+    private Member member;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "mission_id", nullable = false)
