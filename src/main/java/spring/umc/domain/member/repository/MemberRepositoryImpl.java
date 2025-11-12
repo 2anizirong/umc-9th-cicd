@@ -18,7 +18,6 @@ import static spring.umc.domain.member.entity.QMember.member;
 
 import java.util.List;
 
-@Repository
 @RequiredArgsConstructor
 public class MemberRepositoryImpl implements MemberRepositoryCustom {
 
